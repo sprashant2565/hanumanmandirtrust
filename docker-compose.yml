@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: hanuman-mandir-trust-frontend
+    container_name: hanuman-mandir-trust
+    ports:
+      - "8080:80"
+    restart: unless-stopped
