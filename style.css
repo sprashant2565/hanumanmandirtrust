@@ -76,6 +76,7 @@ body.lightbox-open{overflow:hidden}
 .avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .avatar-prashant img{object-position:50% 22%}
 .avatar-vineet img{object-position:50% 12%}
+.avatar-rudra img{object-position:50% 12%}
 .member strong{display:block;color:var(--deep);font-size:14px}.member small{color:#a08273;font-size:11px}
 .contribute-section{background:linear-gradient(180deg,#fff8ea 0%,#ffe3b8 100%);border-top:1px solid #f2dfc4;border-bottom:1px solid #f2dfc4}
 .contribute-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
@@ -97,12 +98,15 @@ body.lightbox-open{overflow:hidden}
 .collection-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px 26px;margin-top:22px;box-shadow:0 14px 40px #7e1d120b}
 .collection-card small{color:#a08273;text-transform:uppercase;letter-spacing:1px;font-size:10px}
 .collection-card h3{margin:4px 0 14px;color:var(--deep);font-family:Kalam,cursive;font-size:26px}
-.murti-note{margin:0 0 16px;padding:12px 14px;background:#fff0d5;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;color:var(--deep);font-size:15px;line-height:1.5}
+.murti-note{margin:0 0 16px;padding:12px 14px;background:#fff0d5;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;color:var(--deep);font-size:15px;line-height:1.7}
+.murti-provider{display:inline-block;margin-left:4px;padding:3px 12px;background:linear-gradient(135deg,#f7c45c,#d94b12);color:#fff;border-radius:999px;font-weight:800;box-shadow:0 4px 12px #d94b1230}
 .collection-list{list-style:none;margin:0;padding:0}
 .collection-list li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
 .collection-list li:last-child{border-bottom:0;padding-bottom:0}
 .collection-list span{color:var(--deep);font-weight:600}
 .collection-list strong{color:var(--saffron);font-variant-numeric:tabular-nums}
+.collection-list li.collection-total{margin-top:10px;padding:14px 16px;background:linear-gradient(135deg,#f7c45c,#d94b12);border:0;border-radius:14px}
+.collection-total span,.collection-total strong{color:#fff;font-size:17px}
 .section, .announcement{scroll-margin-top:88px}
 .seva{background:linear-gradient(120deg,#fff8ea,#ffe5c1)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}.contact-grid p{color:var(--muted)}
