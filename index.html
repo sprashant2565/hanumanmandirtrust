@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260910-murti-highlight" />
+  <link rel="stylesheet" href="style.css?v=20260912-puja-popup" />
 </head>
 <body>
   <div class="topbar">॥ श्री राम ॥ &nbsp; • &nbsp; जय बजरंगबली</div>
@@ -67,79 +67,79 @@
           <div>
             <span class="section-kicker">Latest Acknowledge Message</span>
             <h2>Ganesh Chaturthi 2026: Complete 10-Day Festival Calendar</h2>
-            <p>Day 1 to Day 10: Full Date Breakdown — plan the entire festival journey with this day-by-day calendar.</p>
+            <p>Starts Monday, 14 September — Sthapana in the morning. Daily puja &amp; aarti till Visarjan on 23 September.</p>
           </div>
           <a href="#contribute" class="text-link">Contribute Now →</a>
         </div>
         <ol class="festival-calendar">
-          <li>
+          <li data-date="2026-09-14">
             <span class="day-num">Day 1</span>
             <div>
               <strong>Monday, September 14</strong>
-              <p>Ganesh Sthapana (Installation) – Welcome Lord Ganesha into your home</p>
+              <p>Ganesh Sthapana (Setup &amp; Installation) — Morning puja</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-15">
             <span class="day-num">Day 2</span>
             <div>
               <strong>Tuesday, September 15</strong>
-              <p>First full day of worship and offerings</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-16">
             <span class="day-num">Day 3</span>
             <div>
               <strong>Wednesday, September 16</strong>
-              <p>Continue daily puja rituals</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-17">
             <span class="day-num">Day 4</span>
             <div>
               <strong>Thursday, September 17</strong>
-              <p>Mid-festival devotions</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-18">
             <span class="day-num">Day 5</span>
             <div>
               <strong>Friday, September 18</strong>
-              <p>Fifth day celebrations</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-19">
             <span class="day-num">Day 6</span>
             <div>
               <strong>Saturday, September 19</strong>
-              <p>Continue worship traditions</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-20">
             <span class="day-num">Day 7</span>
             <div>
               <strong>Sunday, September 20</strong>
-              <p>Seventh day observances</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-21">
             <span class="day-num">Day 8</span>
             <div>
               <strong>Monday, September 21</strong>
-              <p>Building toward farewell</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-22">
             <span class="day-num">Day 9</span>
             <div>
               <strong>Tuesday, September 22</strong>
-              <p>Penultimate day preparations</p>
+              <p>Daily worship — Morning &amp; Evening aarti</p>
             </div>
           </li>
-          <li>
+          <li data-date="2026-09-23">
             <span class="day-num">Day 10</span>
             <div>
               <strong>Wednesday, September 23</strong>
-              <p>Anant Chaturdashi – Ganesh Visarjan (Immersion)</p>
+              <p>Anant Chaturdashi — Ganesh Visarjan</p>
             </div>
           </li>
         </ol>
@@ -180,7 +180,7 @@
             </ul>
           </div>
         </div>
-        <aside class="qr-card">
+        <aside class="qr-card" id="paymentCard">
           <small>Scan to Contribute</small>
           <h3>UPI Payment</h3>
           <div class="qr-frame">
@@ -544,6 +544,49 @@
   </footer>
 
 
+  <div class="puja-popup" id="pujaPopup" hidden>
+    <div class="puja-popup-backdrop" data-close-popup></div>
+    <div class="puja-popup-card" role="dialog" aria-modal="true" aria-labelledby="pujaPopupTitle">
+      <button class="puja-popup-close" type="button" id="pujaPopupClose" aria-label="Close announcement">×</button>
+      <div class="puja-popup-badge" id="pujaCountdown">Starts in 2 days</div>
+      <h2 id="pujaPopupTitle">🙏 श्री गणेश पूजा 2026</h2>
+      <p class="puja-popup-lead">Hanuman Mandir Trust — contribute your payment before Sthapana. Ganesh Puja begins on <b>Monday, 14 September</b>.</p>
+      <div class="puja-popup-times">
+        <div>
+          <small>Sthapana / Setup</small>
+          <strong>Mon, 14 Sep 2026</strong>
+          <em>Morning puja</em>
+        </div>
+        <div>
+          <small>Daily Puja &amp; Aarti</small>
+          <strong>14 – 23 September</strong>
+          <em>Morning &amp; Evening</em>
+        </div>
+        <div>
+          <small>Visarjan</small>
+          <strong>Wed, 23 Sep 2026</strong>
+          <em>Anant Chaturdashi</em>
+        </div>
+      </div>
+      <ol class="puja-popup-days">
+        <li><b>Day 1</b> 14 Sep — Sthapana, Morning</li>
+        <li><b>Day 2</b> 15 Sep — Morning &amp; Evening</li>
+        <li><b>Day 3</b> 16 Sep — Morning &amp; Evening</li>
+        <li><b>Day 4</b> 17 Sep — Morning &amp; Evening</li>
+        <li><b>Day 5</b> 18 Sep — Morning &amp; Evening</li>
+        <li><b>Day 6</b> 19 Sep — Morning &amp; Evening</li>
+        <li><b>Day 7</b> 20 Sep — Morning &amp; Evening</li>
+        <li><b>Day 8</b> 21 Sep — Morning &amp; Evening</li>
+        <li><b>Day 9</b> 22 Sep — Morning &amp; Evening</li>
+        <li><b>Day 10</b> 23 Sep — Visarjan</li>
+      </ol>
+      <div class="puja-popup-actions">
+        <a class="btn btn-primary" href="#contribute" id="pujaPopupContribute">Contribute your payment</a>
+        <button class="btn btn-outline" type="button" id="pujaPopupLater">Remind me later</button>
+      </div>
+    </div>
+  </div>
+
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
     <button class="lightbox-btn lightbox-close" type="button" aria-label="Close photo">×</button>
     <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous photo">‹</button>
@@ -642,10 +685,79 @@
     document.querySelector('.lightbox-next').addEventListener('click', () => showPhoto(currentPhoto + 1));
     lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
     document.addEventListener('keydown', (e) => {
+      if (pujaPopup && !pujaPopup.hidden && e.key === 'Escape') closePujaPopup();
       if (!lightbox.classList.contains('open')) return;
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') showPhoto(currentPhoto - 1);
       if (e.key === 'ArrowRight') showPhoto(currentPhoto + 1);
+    });
+
+    const pujaPopup = document.getElementById('pujaPopup');
+    const pujaCountdown = document.getElementById('pujaCountdown');
+    const paymentCard = document.getElementById('paymentCard');
+    const PUJA_START = new Date('2026-09-14T00:00:00+05:30');
+    const PUJA_END = new Date('2026-09-23T23:59:59+05:30');
+
+    function indiaToday() {
+      return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    }
+    function ymd(date) {
+      return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+    }
+    function updateFestivalHighlight() {
+      const today = indiaToday();
+      const todayKey = ymd(today);
+      document.querySelectorAll('.festival-calendar li[data-date]').forEach((item) => {
+        item.classList.toggle('is-today', item.dataset.date === todayKey);
+        item.classList.toggle('is-upcoming', item.dataset.date === '2026-09-14' && today < PUJA_START);
+      });
+    }
+    function pujaCountdownText() {
+      const today = indiaToday();
+      today.setHours(0, 0, 0, 0);
+      const start = new Date(PUJA_START);
+      const end = new Date(PUJA_END);
+      start.setHours(0, 0, 0, 0);
+      const diff = Math.round((start - today) / 86400000);
+      if (today > end) return '';
+      if (diff > 1) return 'Starts in ' + diff + ' days';
+      if (diff === 1) return 'Starts tomorrow';
+      if (diff === 0) return 'Starts today — Morning Sthapana';
+      const dayNum = Math.floor((today - start) / 86400000) + 1;
+      return 'Ongoing — Day ' + dayNum + ' of 10';
+    }
+    function openPujaPopup() {
+      if (!pujaPopup || indiaToday() > PUJA_END) return;
+      pujaPopup.hidden = false;
+      document.body.classList.add('popup-open');
+    }
+    function closePujaPopup() {
+      if (!pujaPopup) return;
+      pujaPopup.hidden = true;
+      document.body.classList.remove('popup-open');
+    }
+    function highlightPayment() {
+      if (!paymentCard) return;
+      paymentCard.classList.add('is-highlight');
+      setTimeout(() => paymentCard.classList.remove('is-highlight'), 4000);
+    }
+
+    const countdown = pujaCountdownText();
+    if (pujaCountdown && countdown) pujaCountdown.textContent = countdown;
+    updateFestivalHighlight();
+    if (countdown && !sessionStorage.getItem('ganeshPopupClosed2026')) {
+      setTimeout(openPujaPopup, 400);
+    }
+    document.getElementById('pujaPopupClose').addEventListener('click', () => {
+      sessionStorage.setItem('ganeshPopupClosed2026', '1');
+      closePujaPopup();
+    });
+    document.getElementById('pujaPopupLater').addEventListener('click', closePujaPopup);
+    document.querySelector('[data-close-popup]').addEventListener('click', closePujaPopup);
+    document.getElementById('pujaPopupContribute').addEventListener('click', () => {
+      sessionStorage.setItem('ganeshPopupClosed2026', '1');
+      closePujaPopup();
+      highlightPayment();
     });
 
   </script>
