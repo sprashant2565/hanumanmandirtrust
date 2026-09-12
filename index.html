@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260912-puja-popup" />
+  <link rel="stylesheet" href="style.css?v=20260912-thanks-popup" />
 </head>
 <body>
   <div class="topbar">॥ श्री राम ॥ &nbsp; • &nbsp; जय बजरंगबली</div>
@@ -163,6 +163,7 @@
           <div class="collection-card">
             <small>Amount Collection</small>
             <h3>Ganesh Puja Contributions</h3>
+            <p class="required-amount">Required amount <strong>₹40,000 – ₹45,000</strong></p>
             <p class="murti-note">Ganesh Murti is provided by <strong class="murti-provider">Satyendra Pathak (SP Pathak)</strong></p>
             <ul class="collection-list">
               <li><span>Prashant Singh</span><strong>₹5,001</strong></li>
@@ -548,9 +549,45 @@
     <div class="puja-popup-backdrop" data-close-popup></div>
     <div class="puja-popup-card" role="dialog" aria-modal="true" aria-labelledby="pujaPopupTitle">
       <button class="puja-popup-close" type="button" id="pujaPopupClose" aria-label="Close announcement">×</button>
-      <div class="puja-popup-badge" id="pujaCountdown">Starts in 2 days</div>
+      <div class="puja-clock" id="pujaCountdown">
+        <p class="puja-clock-label" id="pujaClockLabel">Starts in</p>
+        <div class="puja-clock-units" aria-live="polite">
+          <div><strong id="cdDays">00</strong><small>Days</small></div>
+          <span class="puja-clock-sep">||</span>
+          <div><strong id="cdHours">00</strong><small>Hours</small></div>
+          <span class="puja-clock-sep">||</span>
+          <div><strong id="cdMins">00</strong><small>Minutes</small></div>
+          <span class="puja-clock-sep">||</span>
+          <div><strong id="cdSecs">00</strong><small>Seconds</small></div>
+          <span class="puja-clock-sep">||</span>
+          <div><strong id="cdMs">000</strong><small>Milliseconds</small></div>
+        </div>
+      </div>
       <h2 id="pujaPopupTitle">🙏 श्री गणेश पूजा 2026</h2>
       <p class="puja-popup-lead">Hanuman Mandir Trust — contribute your payment before Sthapana. Ganesh Puja begins on <b>Monday, 14 September</b>.</p>
+      <p class="required-amount">Required amount <strong>₹40,000 – ₹45,000</strong></p>
+      <p class="received-amount">Received amount <strong>₹15,257</strong></p>
+      <div class="thanks-block">
+        <p class="thanks-line" lang="hi">आपके योगदान के लिए आपका बहुत-बहुत धन्यवाद।</p>
+        <p class="thanks-names-label">Contributors</p>
+        <div class="thanks-names">
+          <span>Prashant Singh</span>
+          <span>Vineet Singh</span>
+          <span>Vishal Singh</span>
+          <span>Mohit Singh</span>
+          <span>Raj Kumar Goswami</span>
+          <span>Sonu Pathak</span>
+          <span>Bhole Singh</span>
+          <span>Sonu Singh</span>
+          <span>Rudra Pratap Singh</span>
+          <span>Sandeep</span>
+          <span>PD Singh</span>
+        </div>
+        <p class="thanks-names-label">Ganesh Murti Provider</p>
+        <div class="thanks-names">
+          <span class="thanks-murti">Satyendra Pathak (SP Pathak)</span>
+        </div>
+      </div>
       <div class="puja-popup-times">
         <div>
           <small>Sthapana / Setup</small>
@@ -693,16 +730,42 @@
     });
 
     const pujaPopup = document.getElementById('pujaPopup');
-    const pujaCountdown = document.getElementById('pujaCountdown');
     const paymentCard = document.getElementById('paymentCard');
+    const pujaClockLabel = document.getElementById('pujaClockLabel');
+    const cdDays = document.getElementById('cdDays');
+    const cdHours = document.getElementById('cdHours');
+    const cdMins = document.getElementById('cdMins');
+    const cdSecs = document.getElementById('cdSecs');
+    const cdMs = document.getElementById('cdMs');
     const PUJA_START = new Date('2026-09-14T00:00:00+05:30');
     const PUJA_END = new Date('2026-09-23T23:59:59+05:30');
+    let pujaClockFrame = 0;
 
     function indiaToday() {
       return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
     }
     function ymd(date) {
       return date.getFullYear() + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
+    }
+    function padTime(value, size) {
+      return String(value).padStart(size, '0');
+    }
+    function setClockUnits(days, hours, mins, secs, milli) {
+      cdDays.textContent = padTime(days, 2);
+      cdHours.textContent = padTime(hours, 2);
+      cdMins.textContent = padTime(mins, 2);
+      cdSecs.textContent = padTime(secs, 2);
+      cdMs.textContent = padTime(milli, 3);
+    }
+    function splitDuration(ms) {
+      const days = Math.floor(ms / 86400000);
+      ms %= 86400000;
+      const hours = Math.floor(ms / 3600000);
+      ms %= 3600000;
+      const mins = Math.floor(ms / 60000);
+      ms %= 60000;
+      const secs = Math.floor(ms / 1000);
+      return { days, hours, mins, secs, milli: ms % 1000 };
     }
     function updateFestivalHighlight() {
       const today = indiaToday();
@@ -712,29 +775,42 @@
         item.classList.toggle('is-upcoming', item.dataset.date === '2026-09-14' && today < PUJA_START);
       });
     }
-    function pujaCountdownText() {
-      const today = indiaToday();
-      today.setHours(0, 0, 0, 0);
-      const start = new Date(PUJA_START);
-      const end = new Date(PUJA_END);
-      start.setHours(0, 0, 0, 0);
-      const diff = Math.round((start - today) / 86400000);
-      if (today > end) return '';
-      if (diff > 1) return 'Starts in ' + diff + ' days';
-      if (diff === 1) return 'Starts tomorrow';
-      if (diff === 0) return 'Starts today — Morning Sthapana';
-      const dayNum = Math.floor((today - start) / 86400000) + 1;
-      return 'Ongoing — Day ' + dayNum + ' of 10';
+    function festivalIsActive() {
+      return Date.now() <= PUJA_END.getTime();
+    }
+    function tickPujaClock() {
+      const now = Date.now();
+      const start = PUJA_START.getTime();
+      const end = PUJA_END.getTime();
+      if (now >= end) {
+        pujaClockLabel.textContent = 'Festival completed';
+        setClockUnits(0, 0, 0, 0, 0);
+        return;
+      }
+      if (now >= start) {
+        const dayNum = Math.floor((now - start) / 86400000) + 1;
+        pujaClockLabel.textContent = 'Ongoing — Day ' + dayNum + ' of 10';
+        const left = splitDuration(end - now);
+        setClockUnits(left.days, left.hours, left.mins, left.secs, left.milli);
+      } else {
+        pujaClockLabel.textContent = 'Starts in';
+        const left = splitDuration(start - now);
+        setClockUnits(left.days, left.hours, left.mins, left.secs, left.milli);
+      }
+      pujaClockFrame = requestAnimationFrame(tickPujaClock);
     }
     function openPujaPopup() {
-      if (!pujaPopup || indiaToday() > PUJA_END) return;
+      if (!pujaPopup || !festivalIsActive()) return;
       pujaPopup.hidden = false;
       document.body.classList.add('popup-open');
+      cancelAnimationFrame(pujaClockFrame);
+      tickPujaClock();
     }
     function closePujaPopup() {
       if (!pujaPopup) return;
       pujaPopup.hidden = true;
       document.body.classList.remove('popup-open');
+      cancelAnimationFrame(pujaClockFrame);
     }
     function highlightPayment() {
       if (!paymentCard) return;
@@ -742,10 +818,8 @@
       setTimeout(() => paymentCard.classList.remove('is-highlight'), 4000);
     }
 
-    const countdown = pujaCountdownText();
-    if (pujaCountdown && countdown) pujaCountdown.textContent = countdown;
     updateFestivalHighlight();
-    if (countdown && !sessionStorage.getItem('ganeshPopupClosed2026')) {
+    if (festivalIsActive() && !sessionStorage.getItem('ganeshPopupClosed2026')) {
       setTimeout(openPujaPopup, 400);
     }
     document.getElementById('pujaPopupClose').addEventListener('click', () => {

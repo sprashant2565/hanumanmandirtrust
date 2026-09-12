@@ -101,6 +101,10 @@ body.lightbox-open{overflow:hidden}
 .collection-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:24px 26px;margin-top:22px;box-shadow:0 14px 40px #7e1d120b}
 .collection-card small{color:#a08273;text-transform:uppercase;letter-spacing:1px;font-size:10px}
 .collection-card h3{margin:4px 0 14px;color:var(--deep);font-family:Kalam,cursive;font-size:26px}
+.required-amount{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 14px;padding:12px 16px;background:linear-gradient(135deg,#7e1d12,#d94b12);color:#fff7e8;border-radius:14px;font-size:15px;font-weight:700;box-shadow:0 8px 20px #7e1d1230;animation:requiredBlink 1s ease-in-out infinite}
+.required-amount strong{color:#ffe08a;font-size:18px;letter-spacing:.2px;font-variant-numeric:tabular-nums}
+@keyframes requiredBlink{0%,100%{opacity:1;box-shadow:0 8px 20px #7e1d1230}50%{opacity:.45;box-shadow:0 0 0 3px #ffe08a88}}
+@media(prefers-reduced-motion:reduce){.required-amount{animation:none}}
 .murti-note{margin:0 0 16px;padding:12px 14px;background:#fff0d5;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;color:var(--deep);font-size:15px;line-height:1.7}
 .murti-provider{display:inline-block;margin-left:4px;padding:3px 12px;background:linear-gradient(135deg,#f7c45c,#d94b12);color:#fff;border-radius:999px;font-weight:800;box-shadow:0 4px 12px #d94b1230}
 .collection-list{list-style:none;margin:0;padding:0}
@@ -130,9 +134,24 @@ body.popup-open{overflow:hidden}
 .puja-popup-backdrop{position:absolute;inset:0;background:#2a0d0acc}
 .puja-popup-card{position:relative;width:min(560px,100%);max-height:90vh;overflow:auto;background:linear-gradient(180deg,#fffaf2,#ffe7c2);border:2px solid #f0c46a;border-radius:24px;padding:28px 24px 22px;box-shadow:0 24px 70px #0007}
 .puja-popup-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:#7e1d12;color:#fff7e8;font-size:24px;cursor:pointer;line-height:1}
-.puja-popup-badge{display:inline-block;background:linear-gradient(135deg,#f7c45c,#d94b12);color:#fff;font-weight:800;font-size:13px;letter-spacing:.4px;padding:6px 14px;border-radius:999px;margin-bottom:10px}
+.puja-clock{margin:0 0 14px;padding:12px 10px 14px;background:linear-gradient(135deg,#7e1d12,#d94b12);border-radius:16px;text-align:center;box-shadow:0 8px 20px #7e1d1235}
+.puja-clock-label{margin:0 0 8px;color:#ffe08a;font-weight:800;font-size:13px;letter-spacing:.8px;text-transform:uppercase}
+.puja-clock-units{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:4px 6px}
+.puja-clock-units div{min-width:52px}
+.puja-clock-units strong{display:block;color:#fff;font-size:22px;line-height:1;font-variant-numeric:tabular-nums}
+.puja-clock-units small{display:block;margin-top:4px;color:#ffd7a8;font-size:9px;font-weight:700;letter-spacing:.3px;text-transform:uppercase}
+.puja-clock-sep{color:#ffe08a;font-weight:800;padding-bottom:16px}
 .puja-popup-card h2{margin:0 0 8px;font-family:Kalam,cursive;font-size:32px;color:var(--deep);line-height:1.15}
 .puja-popup-lead{margin:0 0 16px;color:#5c3d32;font-size:15px}
+.received-amount{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 14px;padding:12px 16px;background:linear-gradient(135deg,#1f6b3a,#2f9e4f);color:#f3fff6;border-radius:14px;font-size:15px;font-weight:700;box-shadow:0 8px 20px #1f6b3a30}
+.received-amount strong{color:#d8ffd4;font-size:18px;font-variant-numeric:tabular-nums}
+.thanks-block{margin:0 0 14px;padding:14px 14px 12px;background:#fff8ea;border:1px solid var(--line);border-radius:16px}
+.thanks-line{margin:0 0 12px;text-align:center;font-family:'Noto Sans Devanagari',Kalam,sans-serif;font-size:18px;font-weight:700;line-height:1.45;color:#fff7e8;background:linear-gradient(135deg,#7e1d12,#d94b12);padding:10px 12px;border-radius:12px}
+.thanks-names-label{margin:0 0 6px;color:#a08273;font-size:10px;font-weight:800;letter-spacing:.7px;text-transform:uppercase}
+.thanks-names{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.thanks-names:last-child{margin-bottom:0}
+.thanks-names span{display:inline-block;padding:4px 10px;background:linear-gradient(135deg,#f7c45c,#d94b12);color:#fff;border-radius:999px;font-size:12px;font-weight:800}
+.thanks-names .thanks-murti{background:linear-gradient(135deg,#7e1d12,#d69a26)}
 .puja-popup-times{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
 .puja-popup-times div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 8px;text-align:center}
 .puja-popup-times small{display:block;color:#a08273;text-transform:uppercase;letter-spacing:.6px;font-size:9px;font-weight:700}
