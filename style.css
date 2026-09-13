@@ -142,6 +142,10 @@ body.popup-open{overflow:hidden}
 .puja-clock-units small{display:block;margin-top:4px;color:#ffd7a8;font-size:9px;font-weight:700;letter-spacing:.3px;text-transform:uppercase}
 .puja-clock-sep{color:#ffe08a;font-weight:800;padding-bottom:16px}
 .puja-popup-card h2{margin:0 0 8px;font-family:Kalam,cursive;font-size:32px;color:var(--deep);line-height:1.15}
+.ganpati-welcome,.announcement .ganpati-welcome{margin:0 0 12px;text-align:center;font-family:'Noto Sans Devanagari',Kalam,sans-serif;font-size:22px;font-weight:700;line-height:1.45;color:#7e1d12;background:#fff8e0;border:2px solid #f0c46a;border-radius:14px;padding:10px 12px;animation:ganpatiGlow 1.8s ease-in-out infinite}
+.ganpati-welcome-inline{margin:10px 0}
+@keyframes ganpatiGlow{0%,100%{box-shadow:0 0 0 0 #f8c66b66}50%{box-shadow:0 0 0 6px #f8c66b33}}
+@media(prefers-reduced-motion:reduce){.ganpati-welcome{animation:none}}
 .puja-popup-lead{margin:0 0 16px;color:#5c3d32;font-size:15px}
 .received-amount{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 14px;padding:12px 16px;background:linear-gradient(135deg,#1f6b3a,#2f9e4f);color:#f3fff6;border-radius:14px;font-size:15px;font-weight:700;box-shadow:0 8px 20px #1f6b3a30}
 .received-amount strong{color:#d8ffd4;font-size:18px;font-variant-numeric:tabular-nums}

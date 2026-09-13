@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Kalam:wght@400;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20260912-thanks-popup" />
+  <link rel="stylesheet" href="style.css?v=20260913-welcome-fix" />
 </head>
 <body>
   <div class="topbar">॥ श्री राम ॥ &nbsp; • &nbsp; जय बजरंगबली</div>
@@ -67,7 +67,8 @@
           <div>
             <span class="section-kicker">Latest Acknowledge Message</span>
             <h2>Ganesh Chaturthi 2026: Complete 10-Day Festival Calendar</h2>
-            <p>Starts Monday, 14 September — Sthapana in the morning. Daily puja &amp; aarti till Visarjan on 23 September.</p>
+            <p class="ganpati-welcome ganpati-welcome-inline" lang="hi">आले रे आले, अपने गणपति बप्पा आले!</p>
+            <p>Starts Monday, 14 September — first aarti at 7:30 AM. Daily puja &amp; aarti till Visarjan on 23 September.</p>
           </div>
           <a href="#contribute" class="text-link">Contribute Now →</a>
         </div>
@@ -76,7 +77,7 @@
             <span class="day-num">Day 1</span>
             <div>
               <strong>Monday, September 14</strong>
-              <p>Ganesh Sthapana (Setup &amp; Installation) — Morning puja</p>
+              <p>Ganesh Sthapana (Setup &amp; Installation) — first aarti 7:30 AM</p>
             </div>
           </li>
           <li data-date="2026-09-15">
@@ -177,7 +178,14 @@
               <li><span>Rudra Pratap Singh</span><strong>₹501</strong></li>
               <li><span>Sandeep</span><strong>₹501</strong></li>
               <li><span>PD Singh</span><strong>₹2,000</strong></li>
-              <li class="collection-total"><span>Total Collected</span><strong>₹15,257</strong></li>
+              <li><span>Rishabh Singh</span><strong>₹500</strong></li>
+              <li><span>Vinay Pratap Singh</span><strong>₹1,001</strong></li>
+              <li><span>Hriday Narayan Singh</span><strong>₹501</strong></li>
+              <li><span>Deepak Singh</span><strong>₹2,500</strong></li>
+              <li><span>Prince Singh</span><strong>₹2,500</strong></li>
+              <li><span>Dhiraj Singh</span><strong>₹1,101</strong></li>
+              <li><span>Ambar Singh</span><strong>₹1,101</strong></li>
+              <li class="collection-total"><span>Total Collected</span><strong>₹24,461</strong></li>
             </ul>
           </div>
         </div>
@@ -564,9 +572,10 @@
         </div>
       </div>
       <h2 id="pujaPopupTitle">🙏 श्री गणेश पूजा 2026</h2>
-      <p class="puja-popup-lead">Hanuman Mandir Trust — contribute your payment before Sthapana. Ganesh Puja begins on <b>Monday, 14 September</b>.</p>
+      <p class="ganpati-welcome" lang="hi">आले रे आले, अपने गणपति बप्पा आले!</p>
+      <p class="puja-popup-lead">Hanuman Mandir Trust — मूर्ति आ रही है। First aarti tomorrow morning at <b>7:30 AM</b>, Monday 14 September.</p>
       <p class="required-amount">Required amount <strong>₹40,000 – ₹45,000</strong></p>
-      <p class="received-amount">Received amount <strong>₹15,257</strong></p>
+      <p class="received-amount">Received amount <strong>₹24,461</strong></p>
       <div class="thanks-block">
         <p class="thanks-line" lang="hi">आपके योगदान के लिए आपका बहुत-बहुत धन्यवाद।</p>
         <p class="thanks-names-label">Contributors</p>
@@ -582,6 +591,13 @@
           <span>Rudra Pratap Singh</span>
           <span>Sandeep</span>
           <span>PD Singh</span>
+          <span>Rishabh Singh</span>
+          <span>Vinay Pratap Singh</span>
+          <span>Hriday Narayan Singh</span>
+          <span>Deepak Singh</span>
+          <span>Prince Singh</span>
+          <span>Dhiraj Singh</span>
+          <span>Ambar Singh</span>
         </div>
         <p class="thanks-names-label">Ganesh Murti Provider</p>
         <div class="thanks-names">
@@ -592,7 +608,7 @@
         <div>
           <small>Sthapana / Setup</small>
           <strong>Mon, 14 Sep 2026</strong>
-          <em>Morning puja</em>
+          <em>First aarti 7:30 AM</em>
         </div>
         <div>
           <small>Daily Puja &amp; Aarti</small>
@@ -606,7 +622,7 @@
         </div>
       </div>
       <ol class="puja-popup-days">
-        <li><b>Day 1</b> 14 Sep — Sthapana, Morning</li>
+        <li><b>Day 1</b> 14 Sep — Sthapana, 7:30 AM aarti</li>
         <li><b>Day 2</b> 15 Sep — Morning &amp; Evening</li>
         <li><b>Day 3</b> 16 Sep — Morning &amp; Evening</li>
         <li><b>Day 4</b> 17 Sep — Morning &amp; Evening</li>
@@ -737,7 +753,7 @@
     const cdMins = document.getElementById('cdMins');
     const cdSecs = document.getElementById('cdSecs');
     const cdMs = document.getElementById('cdMs');
-    const PUJA_START = new Date('2026-09-14T00:00:00+05:30');
+    const PUJA_START = new Date('2026-09-14T07:30:00+05:30');
     const PUJA_END = new Date('2026-09-23T23:59:59+05:30');
     let pujaClockFrame = 0;
 
